@@ -1,1 +1,1 @@
-# 6.0001-introduction-to-computer-science-and-programming-in-python
+# 6.0001 Introduction To Computer Science And Programming In Python
