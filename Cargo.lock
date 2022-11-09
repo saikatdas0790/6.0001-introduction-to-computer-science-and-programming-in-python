@@ -9,3 +9,7 @@ version = "0.1.0"
 [[package]]
 name = "problem_set_0"
 version = "0.1.0"
+
+[[package]]
+name = "saving_with_a_raise"
+version = "0.1.0"
