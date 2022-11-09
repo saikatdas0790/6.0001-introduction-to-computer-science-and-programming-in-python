@@ -3,5 +3,9 @@
 version = 3
 
 [[package]]
+name = "house_hunting"
+version = "0.1.0"
+
+[[package]]
 name = "problem_set_0"
 version = "0.1.0"
