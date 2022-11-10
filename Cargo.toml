@@ -4,4 +4,5 @@ members = [
   "problem_set_0",
   "problem_set_1/house_hunting",
   "problem_set_1/saving_with_a_raise",
+  "problem_set_1/finding_the_right_amount_to_save_away",
 ]
