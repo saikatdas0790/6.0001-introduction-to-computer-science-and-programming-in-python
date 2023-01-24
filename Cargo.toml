@@ -6,4 +6,5 @@ members = [
   "problem_set_1/saving_with_a_raise",
   "problem_set_1/finding_the_right_amount_to_save_away",
   "problem_set_2/hangman",
+  "problem_set_3/word_game",
 ]
