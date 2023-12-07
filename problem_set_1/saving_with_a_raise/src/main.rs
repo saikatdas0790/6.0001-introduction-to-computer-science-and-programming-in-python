@@ -33,7 +33,7 @@ fn main() {
         .parse()
         .expect("Portion Saved needs to be a floating point number!");
 
-    println!("Enter the semi­annual raise, as a decimal: ");
+    println!("Enter the semi annual raise, as a decimal: ");
     let mut semi_annual_raise = String::new();
     io::stdin()
         .read_line(&mut semi_annual_raise)

@@ -10,9 +10,9 @@ pub fn load_words() -> Vec<String> {
     )
     .expect("Something went wrong reading the words.txt file");
 
-    println!("{} words loaded.", contents.split(" ").count());
+    println!("{} words loaded.", contents.split(' ').count());
 
-    let word_list: Vec<String> = contents.split(" ").map(|s| s.to_string()).collect();
+    let word_list: Vec<String> = contents.split(' ').map(|s| s.to_string()).collect();
 
     word_list
 }
@@ -24,11 +24,11 @@ pub fn choose_word(word_list: Vec<String>) -> String {
     word_list[random_index].clone()
 }
 
-pub fn is_word_guessed(secret_word: &str, letters_guessed: &Vec<char>) -> bool {
+pub fn is_word_guessed(secret_word: &str, letters_guessed: &[char]) -> bool {
     secret_word.chars().all(|c| letters_guessed.contains(&c))
 }
 
-pub fn get_guessed_word(secret_word: &str, letters_guessed: &Vec<char>) -> String {
+pub fn get_guessed_word(secret_word: &str, letters_guessed: &[char]) -> String {
     secret_word
         .chars()
         .map(|c| {
@@ -41,7 +41,7 @@ pub fn get_guessed_word(secret_word: &str, letters_guessed: &Vec<char>) -> Strin
         .collect()
 }
 
-pub fn get_available_letters(letters_guessed: &Vec<char>) -> String {
+pub fn get_available_letters(letters_guessed: &[char]) -> String {
     "abcdefghijklmnopqrstuvwxyz"
         .chars()
         .filter(|c| !letters_guessed.contains(c))
@@ -263,7 +263,7 @@ fn show_possible_matches(my_word: &str) -> Vec<String> {
         }
     }
 
-    if possible_matches.len() > 0 {
+    if !possible_matches.is_empty() {
         println!("Possible word matches are:");
         println!("{}", possible_matches.join(" "));
     } else {
@@ -287,7 +287,7 @@ mod test {
         let word_list = load_words();
         let word = choose_word(word_list);
 
-        assert!(word.len() > 0);
+        assert!(!word.is_empty());
     }
 
     #[test]
@@ -295,11 +295,11 @@ mod test {
         let secret_word = "apple";
         let letters_guessed = vec!['e', 'i', 'k', 'p', 'r', 's'];
 
-        assert_eq!(is_word_guessed(secret_word, &letters_guessed), false);
+        assert!(!is_word_guessed(secret_word, &letters_guessed));
 
         let letters_guessed = vec!['a', 'p', 'l', 'e'];
 
-        assert_eq!(is_word_guessed(secret_word, &letters_guessed), true);
+        assert!(is_word_guessed(secret_word, &letters_guessed));
     }
 
     #[test]
@@ -322,10 +322,10 @@ mod test {
 
     #[test]
     fn test_match_with_gaps() {
-        assert_eq!(match_with_gaps("te_ t", "tact"), false);
-        assert_eq!(match_with_gaps("a_ _ le", "banana"), false);
-        assert_eq!(match_with_gaps("a_ _ le", "apple"), true);
-        assert_eq!(match_with_gaps("a_ ple", "apple"), true);
+        assert!(!match_with_gaps("te_ t", "tact"));
+        assert!(!match_with_gaps("a_ _ le", "banana"));
+        assert!(match_with_gaps("a_ _ le", "apple"));
+        assert!(match_with_gaps("a_ ple", "apple"));
     }
 
     #[test]
