@@ -1,5 +1,7 @@
 [workspace]
 
+resolver = "2"
+
 members = [
   "problem_set_0",
   "problem_set_1/house_hunting",
@@ -7,4 +9,5 @@ members = [
   "problem_set_1/finding_the_right_amount_to_save_away",
   "problem_set_2/hangman",
   "problem_set_3/word_game",
+  "problem_set_4/permutation",
 ]
