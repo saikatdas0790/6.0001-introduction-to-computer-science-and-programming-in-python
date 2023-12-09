@@ -11,4 +11,5 @@ members = [
   "problem_set_3/word_game",
   "problem_set_4/permutation",
   "problem_set_4/caesar_cipher",
+  "problem_set_4/substitution_cipher",
 ]

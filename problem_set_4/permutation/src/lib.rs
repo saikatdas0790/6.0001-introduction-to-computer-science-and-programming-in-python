@@ -1,5 +1,5 @@
 #[allow(dead_code)]
-fn get_permutations(sequence: String) -> Vec<String> {
+pub fn get_permutations(sequence: String) -> Vec<String> {
     // Enumerate all permutations of a given string
 
     // sequence (string): an arbitrary string to permute. Assume that it is a
