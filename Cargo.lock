@@ -89,6 +89,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "rss_feeder"
+version = "0.1.0"
+
+[[package]]
 name = "saving_with_a_raise"
 version = "0.1.0"
 

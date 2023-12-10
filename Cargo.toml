@@ -12,4 +12,5 @@ members = [
   "problem_set_4/permutation",
   "problem_set_4/caesar_cipher",
   "problem_set_4/substitution_cipher",
+  "problem_set_5/rss_feeder",
 ]
